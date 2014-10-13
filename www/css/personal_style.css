@@ -16,3 +16,7 @@ This is to add personal css, dun add the css in html, difficult to see
 a {
     text-decoration: none !important;
 }
+
+#runBtn{
+    vertical-align:middle; text-align:center;
+}
