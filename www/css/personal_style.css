@@ -1,0 +1,18 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+This is to add personal css, dun add the css in html, difficult to see
+*/
+/* 
+    Created on : Oct 13, 2014, 12:38:27 PM
+    Author     : locnguyen
+*/
+
+#addFriendBtn{
+    margin-right: 20px; margin-top: 3px; float:right
+}
+
+a {
+    text-decoration: none !important;
+}
