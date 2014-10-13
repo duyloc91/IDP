@@ -1,0 +1,12 @@
+{
+  "users": {
+    "duylocnguyen": {
+      "uid": "duylocnguyen",
+      "provider": "coolthing",
+      "password": {
+        "email": "duyloc@gmail.com",
+        "isTemporaryPassword": false
+      }
+    }
+  }
+}
