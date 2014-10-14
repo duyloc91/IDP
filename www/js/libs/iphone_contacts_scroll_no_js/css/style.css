@@ -7,7 +7,7 @@
 |_| |_| |_|\__,_|_|  \___\___/|_| \___/|_|_|\___(_)_| |_|\___|\__|
                                                                   
 */
-body { background-image:url(../images/iphone-bg.png); background-repeat:no-repeat; background-color:#25262b; padding:0; margin:0; }
+body { background-repeat:no-repeat; background-color:#25262b; padding:0; margin:0; }
 a { outline:none; }
 
 #iphone-scrollcontainer { height:461px; width:320px; overflow:auto; position:absolute; top:140px; left:40px; }

@@ -16,7 +16,6 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <script src="js/libs/ratchet-v2.0.2/js/ratchet.js"></script>
-        <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 
         <link rel="stylesheet" href="js/libs/bootstrap-3.2.0-dist/css/bootstrap.css"/>
         <link rel="stylesheet" href="js/libs/ratchet-v2.0.2/css/ratchet.css"/>
@@ -24,15 +23,10 @@
         <link rel="stylesheet" href="js/libs/bamboo/normalize.css">
         <link rel="stylesheet" href="js/libs/bamboo/bamboo.css">
         <link rel="stylesheet" href="css/personal_style.css">
-        
-        <link href="js/libs/datepicker/default.css" rel="stylesheet" type="text/css"/>
-        <link href="js/libs/datepicker/default.date.css" rel="stylesheet" type="text/css"/>
-        <link href="js/libs/datepicker/default.time.css" rel="stylesheet" type="text/css"/>
-        <script src="js/libs/datepicker/legacy.js" type="text/javascript"></script>
-        <script src="js/libs/datepicker/picker.date.js" type="text/javascript"></script>
-        <script src="js/libs/datepicker/picker.js" type="text/javascript"></script>
-        <script src="js/libs/datepicker/picker.time.js" type="text/javascript"></script>
-        <script src="js/libs/datepicker/jquery-1.10.2.min.js" type="text/javascript"></script>
+
+        <script src="js/libs/datetimepicker-master/jquery.js" type="text/javascript"></script>
+        <script src="js/libs/datetimepicker-master/jquery.datetimepicker.js" type="text/javascript"></script>
+        <link href="js/libs/datetimepicker-master/jquery.datetimepicker.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
@@ -43,7 +37,7 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Notification</a></li>
                 <li><a href="#">Settings</a></li>
-                <li><a href="index.html">Log Out</a></li>
+                <li><a href="index.html" data-transition="fade">Log Out</a></li>
             </ul>
         </nav>
 
@@ -56,25 +50,20 @@
             </header>
 
             <section id="scroller" class="overflow">
-                <div id="topMarginBtn"></div>
+                <!--<div id="topMarginBtn"></div>-->
                 <div id="content">
-                    <form id="addRunForm" name="addRunForm" class="content-padded" onsubmit="OnSubmit();" action="calendar.html">
-                        <input type="text" placeholder="email" name="userName" required="">
-                        <input type="password" placeholder="password" name="password" required="">
-                        <div><button class="btn btn-success btn-block" type="submit" id="runBtn">Go!</button></div>
-                    </form>
-                    <input id="timepicker" name="timepicker" placeholder="haha">
+                    <input id="datetimepicker" type="text" >
                 </div>
             </section>
 
         </div>
-
-        <script src="js/libs/bamboo/bamboo.0.1.js"></script>
         <script>
-            $('#timepicker').pickatime();
+            jQuery('#datetimepicker').datetimepicker();
         </script>
+        <script src="js/libs/bamboo/bamboo.0.1.js"></script>
+
         <script>
-                        var site = new Bamboo();
+            var site = new Bamboo();
         </script>
         <nav class="bar bar-tab">
             <a class="tab-item" href="weather.html" data-transition="fade">
