@@ -1,10 +1,10 @@
 {
   "users": {
-    "duylocnguyen": {
-      "uid": "duylocnguyen",
-      "provider": "coolthing",
+    "password:213": {
+      "uid": "password:213",
+      "provider": "password",
       "password": {
-        "email": "duyloc@gmail.com",
+        "email": "bobtony@firebase.com",
         "isTemporaryPassword": false
       }
     }
