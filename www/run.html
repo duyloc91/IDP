@@ -1,96 +1,97 @@
-<!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!DOCTYPE html>
+<html>
     <head>
+        <!-- Required meta tags-->
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="msapplication-tap-highlight" content="no" />
-
-        <title>Let'sRun</title>
-
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <script src="js/libs/ratchet-v2.0.2/js/ratchet.js"></script>
-        <script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
-
-        <link rel="stylesheet" href="js/libs/bootstrap-3.2.0-dist/css/bootstrap.css"/>
-        <link rel="stylesheet" href="js/libs/ratchet-v2.0.2/css/ratchet.css"/>
-
-        <link rel="stylesheet" href="js/libs/bamboo/normalize.css">
-        <link rel="stylesheet" href="js/libs/bamboo/bamboo.css">
-        <link rel="stylesheet" href="css/personal_style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- Your app title -->
+        <title>My App</title>
+        <!-- Path to Framework7 Library CSS-->
+        <link href="css/framework7.min.css" rel="stylesheet" type="text/css"/>
+        <!-- Path to your custom app styles-->
+        <link href="css/my-app.css" rel="stylesheet" type="text/css"/>
     </head>
-
     <body>
-
-        <nav id="main-nav" class="navigation overflow">
-            <ul>
-                <li><a href="#"><script>document.write(localStorage.uName + "    |    ");</script><img src="img/person.png" alt="" height=15% width=15%/></a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Notification</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="index.html" data-transition="fade">Log Out</a></li>
-            </ul>
-        </nav>
-
-        <div id="container">
-
-            <header class="primary">
-                <span class="open icon">&#9776;</span>
-                <hgroup><h1>Let'sRun</h1></hgroup>
-            </header>
-
-            <section id="scroller" class="overflow">
-                <div id="topMarginBtn"></div>
-                <div id="runBtn">
-                    <a onclick="">
-                        <img src="img/runningBtn.png">
-                    </a>
-                </div>
-            </section>
-
+        <!-- Status bar overlay for full screen mode (PhoneGap) -->
+        <div class="statusbar-overlay"></div>
+        <!-- Panels overlay-->
+        <div class="panel-overlay"></div>
+        <!-- Left panel with reveal effect-->
+        <div class="panel panel-left panel-reveal">
+            <div class="content-block">
+                <p><a href="#" class="panel-close">About</a></p>
+                <p><a href="#" class="panel-close">Notification</a></p>
+                <p><a href="#" class="panel-close">Settings</a></p>
+                <p><a href="run.html" class="panel-close">Log Out</a></p>
+            </div>
         </div>
+        <!-- Views -->
+        <div class="views">
+            <!-- Your main view, should have "view-main" class -->
+            <div class="view view-main">
+                <!-- Top Navbar-->
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
 
-        <script src="js/libs/bamboo/bamboo.0.1.js"></script>
-
-        <script>
-                    var site = new Bamboo({
-                        menu: true,
-                        breakpoint: 768,
-                        menuWidth: 265,
-                        headerHeight: 50,
-                        resize: function () {
-                            // function to call on page resize/orientation change
-                        }
-                    });
-        </script>
-        <nav class="bar bar-tab">
-            <a class="tab-item" href="weather.html" data-transition="fade">
-                <span class="icon icon-star"></span>
-                <span class="tab-label">Weather</span>
-            </a>
-            <a class="tab-item" href="log.html" data-transition="fade">
-                <span class="icon icon-info"></span>
-                <span class="tab-label">Log</span>
-            </a>
-            <a class="tab-item active" href="run.html" data-transition="fade">
-                <span class="icon icon-play"></span>
-                <span class="tab-label">Run</span>
-            </a>
-            <a class="tab-item" href="calendar.html" data-transition="fade">
-                <span class="icon icon-edit"></span>
-                <span class="tab-label">Calendar</span>
-            </a>
-            <a class="tab-item" href="friends.html" data-transition="fade">
-                <span class="icon icon-person"></span>
-                <span class="tab-label">Friends</span>
-            </a>
-        </nav>
+                        <div class="left">
+                            <!-- 
+                              Right link contains only icon - additional "icon-only" class
+                              Additional "open-panel" class tells app to open panel when we click on this link
+                            -->
+                            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        </div>
+                        <div class="center sliding">LetsRun</div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+                <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+                <div class="pages navbar-through toolbar-through">
+                    <!-- Page, "data-page" contains page name -->
+                    <div data-page="index" class="page">
+                        <!-- Scrollable page content -->
+                        <div class="page-content">
+                            <div id="runBtn">
+                                <a onclick="">
+                                    <img src="img/runningBtn.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bottom Toolbar-->
+                <div class="toolbar tabbar tabbar-labels-fixed">
+                    <div class="toolbar-inner" style="font-size: 10px">
+                        <!-- Toolbar links -->
+                        <a href="#tab1" class="tab-link">
+                            <i class="icon icon-form-settings"></i>
+                            <span class="tabbar-label">Weather</span>
+                        </a>
+                        <a href="#tab2" class="tab-link">
+                            <i class="icon icon-form-comment"></i>
+                            <span class="tabbar-label">Log</span>
+                        </a>
+                        <a href="#tab3" class="tab-link active">
+                            <i class="icon icon-form-toggle"></i>
+                            <span class="tabbar-label">Run</span>
+                        </a>
+                        <a href="#tab4" class="tab-link">
+                            <i class="icon icon-form-calendar"></i>
+                            <span class="tabbar-label">Calendar</span>
+                        </a>
+                        <a href="#tab4" class="tab-link">
+                            <i class="icon icon-form-gender"><span class="icon icon-person"></span></i>
+                            <span class="tabbar-label">Friends</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Path to Framework7 Library JS-->
+        <script src="js/framework7.min.js" type="text/javascript"></script>
+        <!-- Path to your app js-->
+        <script src="js/my-app.js" type="text/javascript"></script>
     </body>
-
-</html>	
+</html>
