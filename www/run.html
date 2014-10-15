@@ -29,30 +29,61 @@
             </div>
         </div>
         <!-- Views -->
-        <div class="views">
-            <!-- Your main view, should have "view-main" class -->
-            <div class="view view-main">
-                <!-- Top Navbar-->
+        <div class="views tabs toolbar-through">
+
+            <!-- Weather -->
+            <div id="weather" class="view tab">
                 <div class="navbar">
                     <div class="navbar-inner">
-                        <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-
                         <div class="left">
-                            <!-- 
-                              Right link contains only icon - additional "icon-only" class
-                              Additional "open-panel" class tells app to open panel when we click on this link
-                            -->
                             <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                         </div>
                         <div class="center sliding">LetsRun</div>
                         <div class="right"></div>
                     </div>
                 </div>
-                <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-                <div class="pages navbar-through toolbar-through">
-                    <!-- Page, "data-page" contains page name -->
-                    <div data-page="index" class="page">
-                        <!-- Scrollable page content -->
+                <div class="pages navbar-through">
+                    <div data-page="index-2" class="page">
+                        <div class="page-content">
+                            <div class="content-block-title">Weather goes here</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Log -->
+            <div id="log" class="view tab">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        </div>
+                        <div class="center sliding">LetsRun</div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="index-2" class="page">
+                        <div class="page-content">
+                            <div class="content-block-title">Log goes here</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Run -->
+            <div id="run" class="view view-main tab active">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        </div>
+                        <div class="center sliding">LetsRun</div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="index-1" class="page">
                         <div class="page-content">
                             <div id="runBtn">
                                 <a onclick="">
@@ -62,31 +93,72 @@
                         </div>
                     </div>
                 </div>
-                <!-- Bottom Toolbar-->
-                <div class="toolbar tabbar tabbar-labels-fixed">
-                    <div class="toolbar-inner" style="font-size: 10px">
-                        <!-- Toolbar links -->
-                        <a href="#tab1" class="tab-link">
-                            <i class="icon icon-form-settings"></i>
-                            <span class="tabbar-label">Weather</span>
-                        </a>
-                        <a href="#tab2" class="tab-link">
-                            <i class="icon icon-form-comment"></i>
-                            <span class="tabbar-label">Log</span>
-                        </a>
-                        <a href="#tab3" class="tab-link active">
-                            <i class="icon icon-form-toggle"></i>
-                            <span class="tabbar-label">Run</span>
-                        </a>
-                        <a href="#tab4" class="tab-link">
-                            <i class="icon icon-form-calendar"></i>
-                            <span class="tabbar-label">Calendar</span>
-                        </a>
-                        <a href="#tab4" class="tab-link">
-                            <i class="icon icon-form-gender"><span class="icon icon-person"></span></i>
-                            <span class="tabbar-label">Friends</span>
-                        </a>
+            </div>
+
+            <!-- Calendar -->
+            <div id="calendar" class="view tab">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        </div>
+                        <div class="center sliding">LetsRun</div>
+                        <div class="right"></div>
                     </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="index-2" class="page">
+                        <div class="page-content">
+                            <div class="content-block-title">Calendar goes here</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- friends -->
+            <div id="friends" class="view tab">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        </div>
+                        <div class="center sliding">LetsRun</div>
+                        <div class="right"></div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="index-2" class="page">
+                        <div class="page-content">
+                            <div class="content-block-title">Friends goes here</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Toolbar-->
+            <div class="toolbar tabbar tabbar-labels-fixed">
+                <div class="toolbar-inner" style="font-size: 10px">
+                    <!-- Toolbar links -->
+                    <a href="#weather" class="tab-link">
+                        <i class="icon icon-form-settings"></i>
+                        <span class="tabbar-label">Weather</span>
+                    </a>
+                    <a href="#log" class="tab-link">
+                        <i class="icon icon-form-comment"></i>
+                        <span class="tabbar-label">Log</span>
+                    </a>
+                    <a href="#run" class="tab-link active">
+                        <i class="icon icon-form-toggle"></i>
+                        <span class="tabbar-label">Run</span>
+                    </a>
+                    <a href="#calendar" class="tab-link">
+                        <i class="icon icon-form-calendar"></i>
+                        <span class="tabbar-label">Calendar</span>
+                    </a>
+                    <a href="#friends" class="tab-link">
+                        <i class="icon icon-form-gender"><span class="icon icon-person"></span></i>
+                        <span class="tabbar-label">Friends</span>
+                    </a>
                 </div>
             </div>
         </div>
