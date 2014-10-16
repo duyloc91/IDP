@@ -12,6 +12,8 @@
         <link href="css/framework7.min.css" rel="stylesheet" type="text/css"/>
         <!-- Path to your custom app styles-->
         <link href="css/my-app.css" rel="stylesheet" type="text/css"/>
+        <!-- Path to your icons -->
+        <link href="css/ionicons.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <!-- Status bar overlay for full screen mode (PhoneGap) -->
@@ -20,12 +22,58 @@
         <div class="panel-overlay"></div>
         <!-- Left panel with reveal effect-->
         <div class="panel panel-left panel-reveal">
-            <div class="content-block">
-                <p><a href="#"><script>document.write(localStorage.uName + "    |    ");</script><img src="img/person.png" alt="" height=10% width=10%/></a></p>
-                <p><a href="#" class="panel-close">About</a></p>
-                <p><a href="#" class="panel-close">Notification</a></p>
-                <p><a href="#" class="panel-close">Settings</a></p>
-                <p><a href="run.html" class="panel-close">Log Out</a></p>
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="ion ion-person"></i></div>
+                            <div class="item-inner white-font">
+                                <div class="item-title" id="username"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div onclick="document.location.href = 'http://www.google.com'" style="cursor:pointer" class="item-link">
+                            <div class="item-content">
+                                <div class="item-media"><i class="ion ion-ios7-information"></i></div>
+                                <div class="item-inner white-font">
+                                    <div class="item-title">About</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div onclick="document.location.href = 'http://www.google.com'" style="cursor:pointer" class="item-link">
+                            <div class="item-content">
+                                <div class="item-media"><i class="ion ion-ios7-bell"></i></div>
+                                <div class="item-inner white-font">
+                                    <div class="item-title">Notification</div>
+                                    <div class="item-after"><span class="badge"><span id="notification">5</span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div onclick="document.location.href = 'http://www.google.com'" style="cursor:pointer" class="item-link">
+                            <div class="item-content">
+                                <div class="item-media"><i class="ion ion-gear-b"></i></div>
+                                <div class="item-inner white-font">
+                                    <div class="item-title">Settings</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li> 
+                        <div onclick="document.location.href = 'index.html'" style="cursor:pointer" class="item-link">
+                            <div class="item-content">
+                                <div class="item-media"><i class="ion ion-log-out"></i></div>
+                                <div class="item-inner white-font">
+                                    <div class="item-title">Log Out</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- Views -->
@@ -84,10 +132,10 @@
                 </div>
                 <div class="pages navbar-through">
                     <div data-page="index-1" class="page">
-                        <div class="page-content">
+                        <div class="page-content runpage">
                             <div id="runBtn">
                                 <a onclick="">
-                                    <img src="img/runningBtn.png">
+                                    <img style="width: 200px; height:200px" src="img/my-button2.png">
                                 </a>
                             </div>
                         </div>
@@ -140,23 +188,33 @@
                 <div class="toolbar-inner" style="font-size: 10px">
                     <!-- Toolbar links -->
                     <a href="#weather" class="tab-link">
-                        <i class="icon icon-form-settings"></i>
+                        <span class="tab-icon-resize">
+                            <i class="ion ion-ios7-partlysunny"></i>
+                        </span>
                         <span class="tabbar-label">Weather</span>
                     </a>
                     <a href="#log" class="tab-link">
-                        <i class="icon icon-form-comment"></i>
+                        <span class="tab-icon-resize">
+                            <i class="ion ion-ios7-timer"></i>
+                        </span>
                         <span class="tabbar-label">Log</span>
                     </a>
                     <a href="#run" class="tab-link active">
-                        <i class="icon icon-form-toggle"></i>
+                        <span class="tab-icon-resize">
+                            <i class="ion-ios7-paw"></i>
+                        </span>
                         <span class="tabbar-label">Run</span>
                     </a>
                     <a href="#calendar" class="tab-link">
-                        <i class="icon icon-form-calendar"></i>
+                        <span class="tab-icon-resize">
+                            <i class="ion ion-ios7-calendar"></i>
+                        </span>
                         <span class="tabbar-label">Calendar</span>
                     </a>
                     <a href="#friends" class="tab-link">
-                        <i class="icon icon-form-gender"><span class="icon icon-person"></span></i>
+                        <span class="tab-icon-resize">
+                            <i class="ion ion-ios7-people"></i>
+                        </span>
                         <span class="tabbar-label">Friends</span>
                     </a>
                 </div>
@@ -166,5 +224,8 @@
         <script src="js/framework7.min.js" type="text/javascript"></script>
         <!-- Path to your app js-->
         <script src="js/my-app.js" type="text/javascript"></script>
+        <script>
+                            document.getElementById("username").innerHTML(localStorage.uName);
+        </script>
     </body>
 </html>

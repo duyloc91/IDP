@@ -12,3 +12,4 @@ var calendar = myApp.addView('#weather', '#log', '#run', '#calendar', '#friends'
 $$('.panel-close').on('click', function (e) {
     myApp.closePanel();
 });
+
