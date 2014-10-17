@@ -26,7 +26,7 @@ This is to add personal css, dun add the css in html, difficult to see
     height: 40%;
 }
 
-.white-font {
+.black-font {
     color: #000;
 }
 
@@ -38,4 +38,8 @@ This is to add personal css, dun add the css in html, difficult to see
 
 .runpage{
     background:#0F85E7;
+}
+
+.none-line-height{
+    line-height: normal !important
 }
