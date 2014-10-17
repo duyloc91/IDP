@@ -89,59 +89,76 @@
                             <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                         </div>
                         <div class="center sliding">Let'sRun</div>
-                        <div class="right"><a onclick="document.location.href = 'add_run.html'"><span class="ion-ios7-plus-empty" style="font-size: 30px; margin-right: 5px;"></span></a></div>
+                        <div class="right"></div>
                     </div>
                 </div>
                 <div class="pages navbar-through">
                     <div data-page="index-2" class="page">
                         <div class="page-content">
-                            <link href="dp-calendar/jquery.ui.all.css" rel="stylesheet" type="text/css"/>
-                            <link href="dp-calendar/dp_calendar.css" rel="stylesheet" type="text/css"/>
-
-                            <script src="dp-calendar/jquery-1.5.2.min.js" type="text/javascript"></script>
-
-                            <script src="dp-calendar/date.js" type="text/javascript"></script>                            
-                            <script src="dp-calendar/jquery.dp_calendar.min.js" type="text/javascript"></script>
-                            <script src="dp-calendar/jquery.ui.core.js" type="text/javascript"></script>
-                            <script src="dp-calendar/jquery.ui.datepicker.js" type="text/javascript"></script>
-                            <script src="dp-calendar/jquery.ui.position.js" type="text/javascript"></script>
-
-                            <script type="text/javascript">
-                            jQuery(document).ready(function () {
-
-                                var events_array = new Array(
-                                        {
-                                            startDate: new Date(2011, 07, 20, 15, 50),
-                                            endDate: new Date(2012, 00, 10),
-                                            title: "Event 1",
-                                            description: "Description 1",
-                                            priority: 2, // 1 = Low, 2 = Medium, 3 = Urgent
-                                            frecuency: 2 // 1 = Daily, 2 = Weekly, 3 = Monthly, 4 = Yearly
-                                        },
-                                {
-                                    startDate: new Date(2014, 10, 10, 16, 50),
-                                    title: "Event 2",
-                                    description: "Description 2",
-                                    priority: 1,
-                                    frecuency: 3
-                                },
-                                {
-                                    startDate: new Date(2014, 07, 20, 9, 50),
-                                    title: "Event 3",
-                                    description: "Description 3",
-                                    priority: 3,
-                                    frecuency: 3
+                            <div class="content-block-title">New Run</div>
+                            <script>
+                                function validateRun() {
+                                    if (confirm('Create new run?')) {
+                                        var runTime = document.runForm.time.value; //captures the name the user enters
+                                        alert(localStorage.length);
+                                        window.location.href = ("calendar.html");
+                                    }else{
+                                        return false;
+                                    }
                                 }
-                                );
-
-                                jQuery("#dpCalendar").dp_calendar({
-                                    events_array: events_array,
-                                    format_ampm: true,
-                                    show_datepicker: false
-                                });
-                            });
                             </script>
-                            <div id="dpCalendar"></div>
+                            <form action="calendar.html" method="GET" onsubmit="validateRun(); return false;" name="runForm">
+                                <div class="list-block">
+                                    <ul>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+                                                    <div class="item-input">
+                                                        <input type="time" class="time" placeholder="Time" name="time" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+                                                    <div class="item-input">
+                                                        <input type="date" placeholder="date" value="2014-10-17" name="date" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+                                                    <div class="item-input">
+                                                        <input type="text" placeholder="Runners" name="runners" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+                                                    <div class="item-input">
+                                                        <input type="text" placeholder="location" name="location" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+                                                    <div class="item-input">
+                                                        <input type="text" placeholder="distance" name="distance" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <input type="submit" value="Create">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -169,7 +186,7 @@
                         </span>
                         <span class="tabbar-label">Run</span>
                     </a>
-                    <a href="#calendar" class="tab-link active">
+                    <a onclick="document.location.href = 'calendar.html'" class="tab-link active">
                         <span class="tab-icon-resize">
                             <i class="ion ion-ios7-calendar"></i>
                         </span>
