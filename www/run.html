@@ -7,7 +7,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <!-- Your app title -->
-        <title>My App</title>
+        <title>Let's Run!</title>
         <!-- Path to Framework7 Library CSS-->
         <link href="css/framework7.min.css" rel="stylesheet" type="text/css"/>
         <!-- Path to your custom app styles-->
@@ -29,7 +29,7 @@
                         <div class="item-content">
                             <div class="item-media"><i class="ion ion-person"></i></div>
                             <div class="item-inner white-font">
-                                <div class="item-title" id="username"></div>
+                                <div class="item-title" id="username"><script>document.write(localStorage.uName);</script></div>
                             </div>
                         </div>
                     </li>
@@ -108,13 +108,13 @@
             <div class="toolbar tabbar tabbar-labels-fixed">
                 <div class="toolbar-inner none-line-height" style="font-size: 10px">
                     <!-- Toolbar links -->
-                    <a onclick="document.location.href = 'http://www.google.com'"  class="tab-link">
+                    <a onclick="document.location.href = 'weather.html'"  class="tab-link">
                         <span class="tab-icon-resize">
                             <i class="ion ion-ios7-partlysunny"></i>
                         </span>
                         <span class="tabbar-label">Weather</span>
                     </a>
-                    <a onclick="document.location.href = 'http://www.google.com'"  class="tab-link">
+                    <a onclick="document.location.href = 'log.html'"  class="tab-link">
                         <span class="tab-icon-resize">
                             <i class="ion ion-ios7-timer"></i>
                         </span>
@@ -126,13 +126,13 @@
                         </span>
                         <span class="tabbar-label">Run</span>
                     </a>
-                    <a onclick="document.location.href = 'http://www.google.com'"  class="tab-link">
+                    <a onclick="document.location.href = 'calendar.html'"  class="tab-link">
                         <span class="tab-icon-resize">
                             <i class="ion ion-ios7-calendar"></i>
                         </span>
                         <span class="tabbar-label">Calendar</span>
                     </a>
-                    <a onclick="document.location.href = 'http://www.google.com'"  class="tab-link">
+                    <a onclick="document.location.href = 'friends.html'"  class="tab-link">
                         <span class="tab-icon-resize">
                             <i class="ion ion-ios7-people"></i>
                         </span>
@@ -145,8 +145,5 @@
         <script src="js/framework7.min.js" type="text/javascript"></script>
         <!-- Path to your app js-->
         <script src="js/my-app.js" type="text/javascript"></script>
-        <script>
-            document.getElementById("username").innerHTML(localStorage.uName);
-        </script>
     </body>
 </html>
