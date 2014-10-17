@@ -43,3 +43,22 @@ This is to add personal css, dun add the css in html, difficult to see
 .none-line-height{
     line-height: normal !important
 }
+
+.contact-page-padding-top{
+    padding-top:13px !important;
+}
+
+.contact-img{
+    width: 78px ; height:78px;
+    margin: 8px;
+    display:block;
+    float:left;
+}
+
+.item-inner-double{
+    min-height: 88px !important;
+}
+
+.item-media-color{
+    color:#007aff;
+}

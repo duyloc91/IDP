@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- Your app title -->
+        <title>My App</title>
+        <!-- Path to Framework7 Library CSS-->
+        <link href="css/framework7.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/my-app.css" rel="stylesheet" type="text/css"/>
+        <!-- Path to your icons -->
+        <link href="css/ionicons.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="popup remove-on-close modal-in" style="display: block;">
+            <div class="view view-popup navbar-fixed">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left"><a href="friends.html" class="link close-popup">Cancel</a></div>
+                        <div class="center sliding" style="left: -7.5px;">
+
+                            New Friend
+
+                        </div>
+                        <div class="right contact-save-link"><a href="friend_added.html" class="link" onclick="saveFriend()">Save</a></div>
+                    </div>
+                </div>
+                <div class="page">
+                    <div class="page-content contact-edit-form">
+                        <div class="contact-header">
+                            <div class="item-photo">
+                                <img class="contact-img" src="img/my-button2.png">
+                            </div>
+                            <div class="list-block">
+                                <ul>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <input id="firstName" type="text" placeholder="First" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-input">
+                                                    <input id="lastName" type="text" placeholder="Last" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="contact-other list-block">
+                            <ul>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media item-media-color"><i class="icon ion-ios7-telephone-outline"></i></div>
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <input id="phone" type="tel" placeholder="Phone" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item-content">
+                                        <div class="item-media item-media-color"><i class="icon ion-ios7-email-outline"></i></div>
+                                        <div class="item-inner">
+                                            <div class="item-input">
+                                                <input id="email" type="email" placeholder="E-mail" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Path to Framework7 Library JS-->
+        <script>
+            function saveFriend() {
+                var addedFirstName = document.getElementById("firstName").value;
+                var addedLastName = document.getElementById("lastName").value;
+                var addedPhone = document.getElementById("phone").value;
+                var addedEmail = document.getElementById("email").value;//captures info the user enters
+                //alert(firstName + lastName + addedPhone + addedEmail);
+                localStorage.addedFirstName = addedFirstName;
+                localStorage.addedLastName = addedLastName;
+                localStorage.addedFullName = addedFirstName + " " + addedLastName;
+                localStorage.addedPhone = addedPhone;
+                localStorage.addedEmail = addedEmail;//passes the value to the local storage object
+            }
+        </script>
+        <script src="js/framework7.min.js" type="text/javascript"></script>
+        <!-- Path to your app js-->
+    </body>
+</html>
