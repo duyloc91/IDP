@@ -100,29 +100,86 @@
             highestPriority = 0;
 
             $(function () {
-                $(".template").hide();
-                $entries = $("#entries");
-
-
                 $("#submit").click(function (e) {
-                    e.preventDefault()
-                    var $newEntry = $("#newEntry");
+                    e.preventDefault();
+                    var $username = $("#username");
                     var $password = $("#password");
-//                    var entry = $newEntry.val();
-//                    $newEntry.val("");
+
                     rootRef.push({
-                        username: $newEntry.val(),
+                        username: $username.val(),
                         password: $password.val()
                     });
-                    //rootRef.child(entry).setWithPriority(true, highestPriority + 1000);
+                });
+
+                $("#find").click(function (e) {
+                    e.preventDefault();
+                    var $fname = $("#nametofind");
+                    alert($fname.val());
+                    var status = false;
+                    rootRef.on("value", function (users) {
+                        users.forEach(function (user) {
+                            //alert(user.val().username);
+                            if ($fname.val() == (user.val().username)) {
+                                status = true;
+                            }
+                        });
+                    });
+                    if (status) {
+                        alert("found!");
+                    } else {
+                        alert("not found!");
+                    }
+                });
+
+                $("#do").click(function (e) {
+                    e.preventDefault();
+                    var $aname = $("#nametoadd");
+                    var $addvalue = $("#addvalue");
+                    var userRef;
+                    rootRef.on("value", function (users) {
+                        users.forEach(function (user) {
+                            //alert(user.ref());
+                            //alert(user.val().username);
+                            if ($aname.val() == (user.val().username)) {
+                                userRef = user.ref();
+                                //alert($addvalue.val());
+//                                userRef.push({
+//                                    messages: $valuetoadd.val()
+//                                });
+                            }
+                        });
+                    });
+                    if (userRef != null) {
+                        alert("hi");
+                        var newref = new Firebase(userRef.toString()+"/messages");
+                        alert(newref);
+                        newref.set({
+                            haha: $addvalue.val()
+                        });
+                    } else {
+                        alert("wrong");
+                    }
                 });
             });
+
+
         </script>
+        <div>Add into database</div>
         <form>
-            <input id="newEntry" placeholder="username"/>
+            <input id="username" placeholder="username"/>
             <input id="password" placeholder="password"/>
             <button id="submit">Add</button>
         </form>
-
+        <div>Check if user exists</div>
+        <form>
+            <input id="nametofind" placeholder="username">
+            <button id="find">Find</button>
+        </form>
+        <div>Check if user exists and add stuffs</div>
+        <form>
+            <input id="nametoadd" placeholder="username">
+            <input id="addvalue" placeholder="value to add">
+            <button id="do">do</button>
+        </form>
     </body>
 </html>
