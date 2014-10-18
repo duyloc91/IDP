@@ -20,6 +20,7 @@ This is to add personal css, dun add the css in html, difficult to see
 .navbar, .toolbar{
     height: 55px;
 }
+
 #loginRunImg {
     display: block;
     width: 100%;
@@ -61,4 +62,44 @@ This is to add personal css, dun add the css in html, difficult to see
 
 .item-media-color{
     color:#007aff;
+}
+
+.weather-icon{
+    font-size:150px;
+}
+
+.weather-icon-small{
+    height:50px;
+    font-size:50px;
+}
+
+.weather-info{
+    height:150px;
+    font-size:15px;
+}
+
+.weather-info-small{
+    height:50px;
+    font-size:10px;
+}
+
+.weather-title{
+    padding-top:30px;
+    height:40px; font-size: 30px; 
+}
+
+.centerAlignment{
+    text-align: center;
+}
+
+.padtop30{
+    padding-top:30px;
+}
+
+.white-color {
+    color: white;
+}
+
+.logo{
+    height:50px;
 }
