@@ -14,6 +14,11 @@
         <link href="css/my-app.css" rel="stylesheet" type="text/css"/>
         <!-- Path to your icons -->
         <link href="css/ionicons.css" rel="stylesheet" type="text/css"/>
+
+        <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
     <body>
         <!-- START of side menu bar>
@@ -88,33 +93,48 @@
                         <div class="left">
                             <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                         </div>
-                        <div class="center sliding">Let'sRun</div>
+                        <div class="center sliding">New Run</div>
                         <div class="right"></div>
                     </div>
                 </div>
                 <div class="pages navbar-through">
                     <div data-page="index-2" class="page">
                         <div class="page-content">
-                            <div class="content-block-title">New Run</div>
                             <script>
-                                function validateRun() {
-                                    if (confirm('Create new run?')) {
-                                        var runTime = document.runForm.time.value; //captures the name the user enters
-                                        alert(localStorage.length);
-                                        window.location.href = ("calendar.html");
-                                    }else{
-                                        return false;
-                                    }
-                                }
+                                var rootRef
+                                rootRef = new Firebase("https://boiling-torch-6781.firebaseio.com/users/" + localStorage.uName +"/runevents");
+                                $(function () {
+                                    $("#submit").click(function (e) {
+                                        e.preventDefault()
+                                        var $user = localStorage.uName;
+                                        var $time = $("#time");
+                                        var $date = $("#date");
+                                        var $runners = $("#runners");
+                                        var $location = $("#location");
+                                        var $distance = $("#distance");
+
+                                        rootRef.push({
+                                            username: $user,
+                                            time: $time.val(),
+                                            date: $date.val(),
+                                            runners: $runners.val(),
+                                            location: $location.val(),
+                                            distance: $distance.val()
+                                        });
+                                        
+                                        //rootRef.child(entry).setWithPriority(true, highestPriority + 1000);
+                                    });
+                                });
                             </script>
-                            <form action="calendar.html" method="GET" onsubmit="validateRun(); return false;" name="runForm">
+                            <form action="calendar.html" method="GET" onsubmit="validateRun();
+                                    return false;" name="runForm">
                                 <div class="list-block">
                                     <ul>
                                         <li>
                                             <div class="item-content">
                                                 <div class="item-inner">
                                                     <div class="item-input">
-                                                        <input type="time" class="time" placeholder="Time" name="time" required="">
+                                                        <input type="time" class="time" placeholder="Time" id="time" required="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,7 +143,7 @@
                                             <div class="item-content">
                                                 <div class="item-inner">
                                                     <div class="item-input">
-                                                        <input type="date" placeholder="date" value="2014-10-17" name="date" required="">
+                                                        <input type="date" placeholder="date" value="2014-10-17" id="date" required="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -132,7 +152,7 @@
                                             <div class="item-content">
                                                 <div class="item-inner">
                                                     <div class="item-input">
-                                                        <input type="text" placeholder="Runners" name="runners" required="">
+                                                        <input type="text" placeholder="Runners" id="runners" required="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -141,7 +161,7 @@
                                             <div class="item-content">
                                                 <div class="item-inner">
                                                     <div class="item-input">
-                                                        <input type="text" placeholder="location" name="location" value="">
+                                                        <input type="text" placeholder="Location" id="location" value="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -150,14 +170,14 @@
                                             <div class="item-content">
                                                 <div class="item-inner">
                                                     <div class="item-input">
-                                                        <input type="text" placeholder="distance" name="distance" value="">
+                                                        <input type="text" placeholder="Distance" id="distance" value="">
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                                <input type="submit" value="Create">
+                                <input id="submit" class="button button-big button-round active" value="Create">
                             </form>
                         </div>
                     </div>
