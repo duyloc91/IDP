@@ -17,21 +17,21 @@ app.controller("AppCtrl", function($http) {
             case 804: return "ion-ios7-cloud-outline";break;
             default: return "ion-ios7-partlysunny-outline";break;
         }
-    }
+    };
     
     $http.get("http://api.openweathermap.org/data/2.5/forecast?id=1880252")
       .success(function(data) {
         app.weather = data;
         app.todayTemp = Math.round((data.list[0].main.temp - 273.15)*10)/10;
-        app.tmrTemp = Math.round((data.list[8].main.temp - 273.15)*10)/10;
-        app.tmr1Temp = Math.round((data.list[16].main.temp - 273.15)*10)/10;
-        app.tmr2Temp = Math.round((data.list[24].main.temp - 273.15)*10)/10;
+        app.tmrTemp = Math.round((data.list[7].main.temp - 273.15)*10)/10;
+        app.tmr1Temp = Math.round((data.list[14].main.temp - 273.15)*10)/10;
+        app.tmr2Temp = Math.round((data.list[21].main.temp - 273.15)*10)/10;
         
         app.todayWeather = app.weatherIcon(data.list[0].weather[0].id);
-        app.tmrWeather = app.weatherIcon(data.list[8].weather[0].id);
-        app.tmr1Weather = app.weatherIcon(data.list[16].weather[0].id);
-        app.tmr2Weather = app.weatherIcon(data.list[24].weather[0].id);
-      })
+        app.tmrWeather = app.weatherIcon(data.list[7].weather[0].id);
+        app.tmr1Weather = app.weatherIcon(data.list[14].weather[0].id);
+        app.tmr2Weather = app.weatherIcon(data.list[21].weather[0].id);
+      });
       
     
     var today = new Date().getDay();
@@ -49,8 +49,8 @@ app.controller("AppCtrl", function($http) {
         break;
         case 6: app.today = "Saturday";app.tmr = "Sunday";app.tmr1 = "Monday"; app.tmr2 = "Tuesday";
         break;
-        case 7: app.today = "Sunday";app.tmr = "Monday";app.tmr1 = "Tuesday"; app.tmr2 = "Wednesday";
+        case 0: app.today = "Sunday";app.tmr = "Monday";app.tmr1 = "Tuesday"; app.tmr2 = "Wednesday";
         break;
         default: app.today = "Today";app.tmr = "Tomorrow";app.tmr1 = "Next"; app.tmr2 = "Next";
     }
-})
+});

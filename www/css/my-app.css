@@ -12,7 +12,7 @@ This is to add personal css, dun add the css in html, difficult to see
 #runBtn{
     position: absolute;
     top: 40%;
-    left: 34%;
+    left: 40%;
     margin-top: -50px;
     margin-left: -50px;
 }
@@ -103,3 +103,14 @@ This is to add personal css, dun add the css in html, difficult to see
 .logo{
     height:50px;
 }
+
+.RunButtonClickable {
+    background: url(../img/buttondesign.png) no-repeat 0 0;
+    background-position: 0 -166px;
+    width: 157px;
+    height: 156.5px;
+    display: block;
+    text-indent: -9999px;
+}
+
+a.RunButtonClickable:active { background-position: 0 0; }
